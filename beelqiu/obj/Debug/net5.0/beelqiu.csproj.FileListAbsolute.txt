@@ -1,0 +1,15 @@
+/Users/etalasedigital1/Projects/beelqiu/beelqiu/bin/Debug/net5.0/beelqiu.deps.json
+/Users/etalasedigital1/Projects/beelqiu/beelqiu/bin/Debug/net5.0/beelqiu.runtimeconfig.json
+/Users/etalasedigital1/Projects/beelqiu/beelqiu/bin/Debug/net5.0/beelqiu.runtimeconfig.dev.json
+/Users/etalasedigital1/Projects/beelqiu/beelqiu/bin/Debug/net5.0/beelqiu.dll
+/Users/etalasedigital1/Projects/beelqiu/beelqiu/bin/Debug/net5.0/ref/beelqiu.dll
+/Users/etalasedigital1/Projects/beelqiu/beelqiu/bin/Debug/net5.0/beelqiu.pdb
+/Users/etalasedigital1/Projects/beelqiu/beelqiu/obj/Debug/net5.0/beelqiu.csproj.AssemblyReference.cache
+/Users/etalasedigital1/Projects/beelqiu/beelqiu/obj/Debug/net5.0/beelqiu.GeneratedMSBuildEditorConfig.editorconfig
+/Users/etalasedigital1/Projects/beelqiu/beelqiu/obj/Debug/net5.0/beelqiu.AssemblyInfoInputs.cache
+/Users/etalasedigital1/Projects/beelqiu/beelqiu/obj/Debug/net5.0/beelqiu.AssemblyInfo.cs
+/Users/etalasedigital1/Projects/beelqiu/beelqiu/obj/Debug/net5.0/beelqiu.csproj.CoreCompileInputs.cache
+/Users/etalasedigital1/Projects/beelqiu/beelqiu/obj/Debug/net5.0/beelqiu.dll
+/Users/etalasedigital1/Projects/beelqiu/beelqiu/obj/Debug/net5.0/ref/beelqiu.dll
+/Users/etalasedigital1/Projects/beelqiu/beelqiu/obj/Debug/net5.0/beelqiu.pdb
+/Users/etalasedigital1/Projects/beelqiu/beelqiu/obj/Debug/net5.0/beelqiu.genruntimeconfig.cache

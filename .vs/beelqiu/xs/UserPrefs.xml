@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{E09AC693-27B3-47F9-838E-AC7726D572B9}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="beelqiu/Program.cs">
+    <Files>
+      <File FileName="beelqiu/Program.cs" Line="153" Column="22" />
+      <File FileName="beelqiu/Models/Perpustakaan.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="beelqiu" expanded="True">
+            <Node name="beelqiu" expanded="True">
+              <Node name="Models" expanded="True" />
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.beelqiu PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
