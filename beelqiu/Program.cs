@@ -11,7 +11,7 @@ namespace beelqiu
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Banu!");
-            soalSatu();
+            soalTiga();
         }
 
         static void soalSatu() //Belum Selesai
@@ -88,6 +88,40 @@ namespace beelqiu
             {
             Console.WriteLine($"Buku {item.namaBuku}, denda {item.denda}.");
             }
+        }
+
+        static void soalTiga()
+        {
+            string masuk = "2019/1/27 05:00:01";
+            string keluar = "2019/1/27 17:45:03";
+
+            var dateMasuk = DateTime.Parse(masuk);
+            var dateKeluar = DateTime.Parse(keluar);
+
+            //-----------------------------------------//
+
+            TimeSpan lamaParkir = dateKeluar-dateMasuk;
+            string x = lamaParkir.ToString("T");
+            var y = DateTime.Parse(x);
+            double biayaParkir = 0;
+
+            //-----------------------------------------//
+
+            if (y.Hour <= 8)
+            {
+                biayaParkir = 1000 * y.Hour;
+                //Console.Write("Masuk parkir per Jam");
+            }
+            else if (y.Hour >= 8 && y.Minute >= 0 && y.Second > 0 && y.Hour <= 24)
+            {
+                biayaParkir = 8000;
+                //Console.Write("Masuk parkir per hari");
+            }
+            else if (y.Hour >= 24 && y.Minute >= 00 && y.Second > 00 && y.Hour <= 32)
+            {
+                biayaParkir = 15000 + ((y.Hour - 24) * 1000);
+            }
+            Console.Write(biayaParkir);
         }
 
         static void soalEmpat()
