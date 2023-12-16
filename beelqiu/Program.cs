@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using beelqiu.Models;
 
 namespace beelqiu
@@ -11,7 +12,7 @@ namespace beelqiu
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Banu!");
-            soalTiga();
+            soalTujuh();
         }
 
         static void soalSatu() //Belum Selesai
@@ -190,6 +191,49 @@ namespace beelqiu
             }
             
             Console.Write(isPalindrome);
+        }
+
+        static void soalTujuh()
+        {
+            //string input = "8702717630713461643";
+            string input = "12244456";
+
+            var deret = input.ToCharArray();
+
+            int[] x = Array.ConvertAll(deret, i => (int)char.GetNumericValue(i));
+            Array.Sort(x);
+
+            // Mean
+            int meanX = x.Sum() / x.Length;
+            //Console.Write(meanX);
+
+            // Median
+            var medianX = 0;
+            var y = x.Length / 2;
+
+            if (x.Length == 0)
+            {
+                medianX = (x[y]+x[y+1])/2;
+            }
+            else
+            {
+                medianX = x[y];
+            }
+            //Console.Write(medianX);
+
+            // Modus
+
+            //var modusX = x.GroupBy(i => i).OrderBy(i => i.Count()).Select(i => i.Key).ToList();
+            //var modusX = x.GroupBy(i => i).ToList();
+
+            //foreach (var item in modusX)
+            //{
+
+            //Console.Write($"{item.Key}, ");
+            //}
+
+
+
         }
 
         static void soalSembilan()
