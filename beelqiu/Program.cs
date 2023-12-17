@@ -12,7 +12,7 @@ namespace beelqiu
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Banu!");
-            soalTujuh();
+            soalDuaBelas();
         }
 
         static void soalSatu() //Belum Selesai
@@ -236,6 +236,11 @@ namespace beelqiu
 
         }
 
+        static void soalDelapan() //Belum paham sama soalnya
+        {
+            Console.Write("Soal Nomor Delapan");
+        }
+
         static void soalSembilan()
         {
             int n = 5;
@@ -321,6 +326,27 @@ namespace beelqiu
 
                 Console.Write(" ");
       
+            }
+        }
+
+        static void soalDuaBelas()
+        {
+            int[] input = new int[] {1,2,1,3,4,7,1,1,5,6,1,8};
+            int index = 0;
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                for (int j = i+1; j < input.Length; j++)
+                {
+                    if (input[i] > input[j])
+                    {
+                        index = input[j];
+                        input[j] = input[i];
+                        input[i] = index;
+                    }
+
+                }
+                Console.Write($"{input[i]}, ");
             }
         }
 
