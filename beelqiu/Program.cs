@@ -12,47 +12,54 @@ namespace beelqiu
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Banu!");
-            soalDuaBelas();
+            soalSatu();
         }
 
-        static void soalSatu() //Belum Selesai
+        static void soalSatu()
         {
-            //int uang = 1000;
 
             List<int[]> listBarang = new List<int[]>();
 
-            int[] kacaMata = {500,600,700,800};
-            int[] Baju = {200,400,350};
-            int[] Sepatu = {400,350,200,300};
-            int[] Buku = {100,50,150};
+            int[] kacaMata = { 500, 600, 700, 800 };
+
+            int[] Baju = { 200, 400, 350 };
+
+            int[] Sepatu = { 400, 350, 200, 300 };
+
+            int[] Buku = { 100, 50, 150 };
+
 
             listBarang.Add(kacaMata);
             listBarang.Add(Baju);
+            listBarang.Add(Sepatu);
+            listBarang.Add(Buku);
 
-            List<int> jumlah = new List<int>();
+            int[] barangdiBeli = new int[4];
 
-            int temp = 0;
+            int uang = 1000;
+            int sisaUang = uang;
+            int countBarang = 0;
+
 
             for (int i = 0; i < listBarang.Count; i++)
             {
                 for (int j = 0; j < listBarang[i].Length; j++)
                 {
-                    //Console.Write($"{listBarang[i][j]+ listBarang[i][j]}, ");
-                    //if (i < listBarang.Count - 1)
-                    //{
-                    //temp = listBarang[i][j] + listBarang[i][j];
-                    jumlah.Add(listBarang[i][j]);
-                    //}
-                    //Console.Write($"{listBarang[i][j]}, ");
-                }
-
-                Console.Write($"{temp} (kacamata: {temp}, baju: {temp}, sepatu: {temp}, buku: {temp})");
+                    if (sisaUang >= listBarang[i][j])
+                    {
+                        sisaUang -= listBarang[i][j];
+                        countBarang++;
+                        barangdiBeli[i] = listBarang[i][j];
+                        break;
+                    }
+                    
+                } 
             }
 
-            //foreach (var item in jumlah)
-            //{
-            //    Console.Write($"{item}, ");
-            //}
+            Console.WriteLine($"Jumlah uang yang dipakai: {uang - sisaUang}");
+            Console.WriteLine($"Jumlah item yang bisa dibeli: {countBarang}\n(Kacamata {barangdiBeli[0]}; Baju {barangdiBeli[1]}; Sepatu {barangdiBeli[2]}; Buku {barangdiBeli[3]})");
+
+            
         }
 
         static void soalDua()
