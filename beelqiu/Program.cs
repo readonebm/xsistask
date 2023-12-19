@@ -12,7 +12,7 @@ namespace beelqiu
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Banu!");
-            soalTujuh();
+            soalDelapan();
         }
 
         static void soalSatu()
@@ -266,9 +266,39 @@ namespace beelqiu
 
         }
 
-        static void soalDelapan() //Belum paham sama soalnya
+        static void soalDelapan()
         {
-            Console.Write("Soal Nomor Delapan");
+            int[] deret = {1,2,4,7,8,6,9};
+            Array.Sort(deret);
+
+            int nilaiMIN = 0;
+            int nilaiMax = 0;
+            int hitung = 0;
+
+            for (int i = 0; i < deret.Length; i++)
+            {
+                if (i < 4)
+                {
+                    nilaiMIN += deret[i];
+                }
+            }
+
+            for (int i = deret.Length - 1; i >= 0; i--)
+            {
+
+                if (hitung == 4)
+                {
+                    break;
+                }
+                else
+                {
+                    nilaiMax += deret[i];
+                }
+                hitung++;
+            }
+
+            Console.WriteLine($"Nilai MIN: {nilaiMIN}");
+            Console.WriteLine($"Nilai MAX: {nilaiMax}");
         }
 
         static void soalSembilan()
