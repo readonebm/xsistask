@@ -12,7 +12,7 @@ namespace beelqiu
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Banu!");
-            soalTigaBelas();
+            soalEmpatBelas();
         }
 
         static void soalSatu()
@@ -442,43 +442,35 @@ namespace beelqiu
 
         static void soalEmpatBelas()
         {
+            /*
+             N = 3 > 7 1 2 4 3 9 0
+             N = 1 > 9 0 7 1 2 4 1 
+            */
+
             string input = "3907124";
             var deret = input.ToCharArray();
 
-            var angkaPertama = deret[0];
-            var angkaAkhir = deret[deret.Length-1];
-            int n = 3;
+            int n = 1;
+            int y = 0;
 
-            for (int i = 0; i < deret.Length; i++)
+            while (y < n)
             {
-                //angkaPertama = deret[n];
-
-                //if (i == 0)
-                //{
-                //    Console.Write($"{angkaPertama}");
-                //}else if (i == deret.Length - 1)
-                //{
-                //    angkaAkhir = deret[n-1];
-                //    Console.Write($"{angkaAkhir} ");
-                //}
-                //else
-                //{
-                //Console.Write($"{deret[i+1]}");
-                //}
-
-                if (i == 0)
+                var angkaPertama = deret[0];
+                for (int i = 0; i < deret.Length-1; i++)
                 {
-                    Console.Write(deret[n]);
-                }else if (i > n)
-                {
-                    Console.Write(deret[n+1]);
+                    deret[i] = deret[i + 1];   
                 }
-                else
-                {
-                    Console.Write("x");
-                }
+                deret[deret.Length - 1] = angkaPertama;
+
+                y++;
             }
             
+
+            foreach (var item in deret)
+            {
+            Console.Write(item + ",");
+            }
+
         }
 
         static void soalLimaBelas()
