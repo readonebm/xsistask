@@ -12,7 +12,7 @@ namespace beelqiu
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Banu!");
-            soalEnamBelas();
+            soalTujuhBelas();
         }
 
         static void soalSatu()
@@ -528,6 +528,38 @@ namespace beelqiu
                 Console.WriteLine($"Orang ke{j+1} bayar {bayarperOrgs[j]}K");
             }
              
+        }
+
+        static void soalTujuhBelas()
+        {
+            char[] jalur = {'N','N','T','N','N','N','T','T','T','T','T','N','T','T','T','N','T','N'};
+
+            int kondisiJalur = 0;
+            int gunung = 0;
+            int lembah = 0;
+
+            for (int i = 0; i < jalur.Length; i++)
+            {
+                if (jalur[i] == 'N')
+                {
+                    kondisiJalur++;
+                    if (kondisiJalur == 0)
+                    {
+                        lembah++;
+                    }
+                }
+                else
+                {
+                    kondisiJalur--;
+                    if (kondisiJalur == 0)
+                    {
+                        gunung++;
+                    }
+                }
+
+            }
+
+            Console.Write($"Hattori sudah melewati {gunung} gunung dan {lembah} lembah.");
         }
     }
 }
