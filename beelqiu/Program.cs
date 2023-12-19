@@ -12,7 +12,7 @@ namespace beelqiu
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Banu!");
-            soalTujuhBelas();
+            soalDelapanBelas();
         }
 
         static void soalSatu()
@@ -560,6 +560,34 @@ namespace beelqiu
             }
 
             Console.Write($"Hattori sudah melewati {gunung} gunung dan {lembah} lembah.");
+        }
+
+        static void soalDelapanBelas()
+        {
+           char[] pangram = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'p', 'w', 'x', 'y', 'z' };
+
+            string kalimat = "Sphinx of black quartz, judge my vow";
+            //string kalimat = "Brawny gods just flocked up to quiz and vex him";
+            //string kalimat = "Check back tomorrow; I will see if the book has arrived";
+            //string kalimat = "The quick brown fox jumps over the lazy dog";
+
+            string isPangram = "Kalimat Pangram";
+
+            string kaltemp = kalimat.ToLower();
+
+            for (int i = 0; i < pangram.Length; i++)
+            {
+                if (kaltemp.Contains(pangram[i]))
+                {
+                    continue;
+                }
+                else
+                {
+                    isPangram = "Bukan kalimat pangram";
+                }
+            }
+            Console.Write(isPangram);
+
         }
     }
 }
