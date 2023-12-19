@@ -12,7 +12,7 @@ namespace beelqiu
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Banu!");
-            soalEmpatBelas();
+            soalEnamBelas();
         }
 
         static void soalSatu()
@@ -111,7 +111,7 @@ namespace beelqiu
             TimeSpan lamaParkir = dateKeluar-dateMasuk;
             string x = lamaParkir.ToString("T");
             var y = DateTime.Parse(x);
-            double biayaParkir = 0;
+            float biayaParkir = 0;
 
             //-----------------------------------------//
 
@@ -475,9 +475,59 @@ namespace beelqiu
 
         static void soalLimaBelas()
         {
-            DateTime waktu = DateTime.Now;
+            string input = "03:40:44 PM";
+            var waktu = Convert.ToDateTime(input);
 
             Console.Write(waktu.ToString("HH:mm:ss"));
+        }
+
+        static void soalEnamBelas()
+        {
+            float[] haFood = {42,50,30,70,30};
+            List<float> haFoodPS = new List<float>() { };
+            int n = 4;
+
+            float pajak = 0;
+            float haFoods = 0;
+
+            foreach (var item in haFood)
+            {
+                pajak = item * (0.15f);
+                haFoods = item + pajak;
+                haFoodPS.Add(haFoods);
+            }
+
+            float bayarperOrg = 0;
+            List<float> bayarperOrgs = new List<float>() { };
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < haFoodPS.Count; j++)
+                {
+                    if (i == 0 && j == 0)
+                    {
+                        continue;
+
+                    }else if(j==0)
+                    {
+                        bayarperOrg += haFoodPS[j] / 3;
+                    }
+                    else
+                    {
+                        bayarperOrg += haFoodPS[j] / 4;
+                    }
+
+                }
+                bayarperOrgs.Add(bayarperOrg);
+                bayarperOrg = 0;
+            }
+
+            //Orang ke 1 adalah yang punya alergi
+            for (int j = 0; j < bayarperOrgs.Count; j++)
+            {
+                Console.WriteLine($"Orang ke{j+1} bayar {bayarperOrgs[j]}K");
+            }
+             
         }
     }
 }
