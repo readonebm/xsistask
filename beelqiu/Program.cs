@@ -564,6 +564,56 @@ namespace beelqiu
 
         static void soalDelapanBelas()
         {
+            float[] inputJam = {9,13,15,17};
+            float[] inputKal = {30,20,50,80};
+
+            //Mencari kebutuhan olahraga
+            //rumus 0.1 x jml.kalori x selisihOlahraga(j)
+
+            //Mencari (j)
+            List<float> j = new List<float>() { };
+            float temJ = 0;
+            for (int i = 0; i < inputJam.Length; i++)
+            {
+                temJ = Math.Abs(18 - inputJam[i]);
+                j.Add(temJ);
+
+                temJ = 0;
+            }
+
+            //Mencari kebutuhan olahraga
+
+            List<float> kebOlga = new List<float>() { };
+            float tempOl = 0;
+
+            for (int i = 0; i < j.Count; i++)
+            {
+
+                tempOl = 0.1f * inputKal[i] * j[i] * 60;
+                kebOlga.Add(tempOl);
+
+                tempOl = 0;
+            }
+
+            //Mencari total kebutuhan olahraga
+            float tot_KebOlga = 0;
+
+            foreach (var x in kebOlga)
+            {
+                tot_KebOlga += x;
+            }
+
+            //Console.Write(tot_KebOlga);
+
+            //Mencari kebutuhan minum
+            float ccMinum = tot_KebOlga / 30 * 100;
+            ccMinum += 500;
+
+            Console.Write($"Kebutuhan air Donna sepanjang olahraga adalah {ccMinum}cc");
+        }
+
+        static void soalSembilanBelas()
+        {
            char[] pangram = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'p', 'w', 'x', 'y', 'z' };
 
             string kalimat = "Sphinx of black quartz, judge my vow";
@@ -588,6 +638,35 @@ namespace beelqiu
             }
             Console.Write(isPangram);
 
+        }
+
+        static void soalDuaPuluh()
+        {
+            Console.Write("Soal Dua Puluh");
+        }
+
+        static void soalDupulSatu()
+        {
+            /*
+             -	Walk	: ST +1, D +1
+             -	Jump	: ST -2, D +3 
+            */
+
+            char[] lintasan = {'_', '_', '_', '_', '_', 'O', '_', '_', '_' };
+
+            int ST = 0;
+            //int D = 0;
+
+            for (int i = 0; i < lintasan.Length; i++)
+            {
+                if (lintasan[i] == 'O')
+                {
+                    if (ST == 0)
+                    {
+                        break;
+                    }
+                }
+            }
         }
     }
 }
