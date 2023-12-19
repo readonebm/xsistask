@@ -12,7 +12,7 @@ namespace beelqiu
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Banu!");
-            soalDelapan();
+            soalTigaBelas();
         }
 
         static void soalSatu()
@@ -408,6 +408,36 @@ namespace beelqiu
                 }
                 Console.Write($"{input[i]}, ");
             }
+        }
+
+        static void soalTigaBelas()
+        {
+            /*
+             Jam berkaitan dengan lingkaran. satu lingkaran ada 360 derajat.
+             berarti kalo dari jam 00.00 s.d 12.00 berarti ada 360 derajat.
+             - harus mencari sudut jam.
+               > sudut dalam 1 jam, 360 / 12 jam = 30 derajat/ jam.
+             - harus mencari sudut menit.
+               > sudut dalam 1 menit, 360/60 menit = 6 derajat / menit.
+            */
+
+            string input = "2:20";
+            DateTime inputDate = DateTime.ParseExact(input, "h:m", CultureInfo.InvariantCulture);
+
+            int jam = Convert.ToInt32(inputDate.Hour.ToString());
+            int menit = Convert.ToInt32(inputDate.Minute.ToString());
+
+            double sudutJam = (jam * 30) + (menit * 30.0 / 60);
+            double sudutMenit = menit * 6;
+
+            double suduts = Math.Abs(sudutJam-sudutMenit);
+
+            if (suduts > 180)
+            {
+                suduts = 360 - suduts;
+            }
+
+            Console.Write($"Sudut yang terbentuk adalah {suduts} derajat.");
         }
 
         static void soalEmpatBelas()
