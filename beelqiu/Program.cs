@@ -12,7 +12,7 @@ namespace beelqiu
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Banu!");
-            soalSatu();
+            soalTujuh();
         }
 
         static void soalSatu()
@@ -202,8 +202,8 @@ namespace beelqiu
 
         static void soalTujuh()
         {
-            //string input = "8702717630713461643";
-            string input = "12244456";
+            string input = "8702717630713461643";
+            //string input = "1444525526";
 
             var deret = input.ToCharArray();
 
@@ -211,35 +211,58 @@ namespace beelqiu
             Array.Sort(x);
 
             // Mean
-            int meanX = x.Sum() / x.Length;
+            //int meanX = x.Sum() / x.Length;
             //Console.Write(meanX);
 
             // Median
-            var medianX = 0;
-            var y = x.Length / 2;
+            //var medianX = 0;
+            //var y = x.Length / 2;
 
-            if (x.Length == 0)
-            {
-                medianX = (x[y]+x[y+1])/2;
-            }
-            else
-            {
-                medianX = x[y];
-            }
+            //if (x.Length == 0)
+            //{
+            //    medianX = (x[y]+x[y+1])/2;
+            //}
+            //else
+            //{
+            //    medianX = x[y];
+            //}
             //Console.Write(medianX);
+
 
             // Modus
 
-            //var modusX = x.GroupBy(i => i).OrderBy(i => i.Count()).Select(i => i.Key).ToList();
-            //var modusX = x.GroupBy(i => i).ToList();
+            int count = 0;
+            int hitMode = 0;
+            int mode = 0;
 
-            //foreach (var item in modusX)
-            //{
+            for (int i = 0; i < x[x.Length-1]; i++)
+            {
+                for (int j = 0; j < x.Length; j++)
+                {
+                    if (i == x[j])
+                    {
+                        count++;
+                        if (count > hitMode)
+                        {
+                            hitMode = count;
+                            mode = i;
+                        }
+                    }
 
-            //Console.Write($"{item.Key}, ");
-            //}
+
+                }
+                count = 0;
+            }
+            Console.WriteLine($"Mode: {mode}");
 
 
+
+            //with LINQ Method
+            //var derGroup = x.GroupBy(i => i);
+            //int maxCount = derGroup.Max(g => g.Count());
+            //int mode = derGroup.First(g => g.Count() == maxCount).Key;
+
+            //Console.Write(mode);
 
         }
 
