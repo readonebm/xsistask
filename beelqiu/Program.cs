@@ -12,7 +12,7 @@ namespace beelqiu
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Banu!");
-            soalDelapanBelas();
+            soalDupulSatu();
         }
 
         static void soalSatu()
@@ -642,7 +642,40 @@ namespace beelqiu
 
         static void soalDuaPuluh()
         {
-            Console.Write("Soal Dua Puluh");
+          
+            int jarak = 2;
+            int[] charA = { 'G', 'G', 'G' };
+            int[] charB = { 'K', 'K', 'B' };
+
+            int pointA = 0;
+            int pointB = jarak;
+
+            for (int i = 0; i < charA.Length; i++)
+            {
+                if (charA[i] == 'G' && charB[i] == 'K')
+                {
+                    pointA += 2;
+                    pointB += 1;
+                }
+
+                if (charA[i] == 'G' && charB[i] == 'B')
+                {
+                    pointA += 1;
+                    pointB += 2;
+                }
+
+                if ((pointB - pointA) == 0)
+                {
+                    break;
+                }
+
+            }
+
+            Console.WriteLine($"Point A : {pointA}");
+            Console.WriteLine($"Point B : {pointB}");
+
+
+          
         }
 
         static void soalDupulSatu()
@@ -652,21 +685,101 @@ namespace beelqiu
              -	Jump	: ST -2, D +3 
             */
 
-            char[] lintasan = {'_', '_', '_', '_', '_', 'O', '_', '_', '_' };
+            //string[] lintasan = {"_", "_", "_", "_", "_", "O", "_", "_", "_","Finish"};
+            string[] lintasan = {"O", "_", "_", "_", "_", "O", "_", "_", "_","Finish"};
 
             int ST = 0;
-            //int D = 0;
+            int D = 0;
 
             for (int i = 0; i < lintasan.Length; i++)
             {
-                if (lintasan[i] == 'O')
+
+                if (i == 0 && lintasan[i] == "O")
                 {
-                    if (ST == 0)
+                    Console.Write("FAILED!");
+                    break;
+                }
+                else
+                {
+                    if (ST > 3)
+                    {
+                        if (lintasan[i + 3] != "0" && i < lintasan.Length - 3)
+                        {
+                            ST -= 2;
+                            D += 3;
+                            //i += 3;
+
+                            Console.Write("J, ");
+
+                            if (ST > 1)
+                            {
+                                ST -= 2;
+                                D += 3;
+                                //i += 3;
+
+                                Console.Write("J, ");
+                            }
+                        }
+                        else
+                        {
+                            ST += 1;
+                            D += 1;
+
+                            Console.Write("W, ");
+                        }
+                    }
+                    else
+                    {
+                        ST += 1;
+                        D += 1;
+
+                        Console.Write("W, ");
+                    }
+
+                    if (D >= lintasan.Length - 1)
                     {
                         break;
                     }
+
                 }
+                
+                    
+
             }
+        }
+
+        static void soalDupulDua()
+        {
+            int[] lajuLeleh = {1,1,2,3,5,8,13};
+            int[] lilin = {3,3,9,6,7,8,23};
+
+            int temp = 0;
+            int k = 0;
+
+            int isLilin = 0;
+
+            while (k < lajuLeleh.Length)
+            {
+                for (int j = 0; j < lilin.Length; j++)
+                {
+                    temp = lilin[j] - lajuLeleh[j];
+
+                    if (temp == 0)
+                    {
+                        isLilin = lilin[j];
+                        break;
+                    }
+                }
+                k++;
+            }
+
+            int firstLeleh = Array.IndexOf(lilin, isLilin);
+
+            Console.Write($"Lilin pertama yang habis meleleh adalah lilin ke {firstLeleh + 1}");
+
+
+
+
         }
     }
 }
