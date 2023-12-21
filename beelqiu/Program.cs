@@ -650,29 +650,46 @@ namespace beelqiu
             int pointA = 0;
             int pointB = jarak;
 
+            int isNol = pointA - pointB;
+
             for (int i = 0; i < charA.Length; i++)
             {
                 if (charA[i] == 'G' && charB[i] == 'K')
                 {
                     pointA += 2;
                     pointB += 1;
+
+                    if (isNol == 0)
+                    {
+                        Console.Write("Pemenang A");
+                    }
+                    else
+                    {
+                        continue;
+                    }
+
                 }
 
                 if (charA[i] == 'G' && charB[i] == 'B')
                 {
                     pointA += 1;
                     pointB += 2;
+
+                    if (isNol == 0)
+                    {
+                        Console.Write("Pemenang B");
+                    }
+                    else
+                    {
+                        continue;
+                    }
                 }
 
-                if ((pointB - pointA) == 0)
-                {
-                    break;
-                }
 
             }
 
-            Console.WriteLine($"Point A : {pointA}");
-            Console.WriteLine($"Point B : {pointB}");
+            //Console.WriteLine($"Point A : {pointA}");
+            //Console.WriteLine($"Point B : {pointB}");
 
 
           
